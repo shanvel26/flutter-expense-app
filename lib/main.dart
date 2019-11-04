@@ -10,27 +10,42 @@ class ExpenseApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: Text("Expense App"),
-        ),
-        body: SingleChildScrollView(
-          child: Column(
-            // mainAxisAlignment: MainAxisAlignment.spaceAround,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              Container(
-                width: double.infinity,
-                child: Card(
-                  color: Colors.blue,
-                  child: Text("CHART"),
-                  elevation: 10,
+          appBar: AppBar(
+            title: Text("Expense App"),
+            actions: <Widget>[
+              IconButton(
+                icon: Icon(
+                  Icons.add,
                 ),
-              ),
-              UserTransactions(),
+                onPressed: () {},
+              )
             ],
           ),
-        ),
-      ),
+          body: SingleChildScrollView(
+            child: Column(
+              // mainAxisAlignment: MainAxisAlignment.spaceAround,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: <Widget>[
+                Container(
+                  width: double.infinity,
+                  child: Card(
+                    color: Colors.blue,
+                    child: Text("CHART"),
+                    elevation: 10,
+                  ),
+                ),
+                UserTransactions(),
+              ],
+            ),
+          ),
+          floatingActionButtonLocation:
+              FloatingActionButtonLocation.centerFloat,
+          floatingActionButton: FloatingActionButton(
+            child: Icon(
+              Icons.add,
+            ),
+            onPressed: () {},
+          )),
     );
   }
 }
